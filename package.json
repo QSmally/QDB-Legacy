@@ -1,0 +1,24 @@
+{
+  "name": "qdatabase",
+  "version": "3.0.0",
+  "description": "JSON wrapper data mangement package for Node.js",
+  "main": "QDB.js",
+  "scripts": {
+    "test": "npm version && node ."
+  },
+  "keywords": [
+    "JSON",
+    "Wrapper",
+    "Database",
+    "Data-management",
+    "DB",
+    "QDB",
+    "QDatabase"
+  ],
+  "author": "QSmally",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "string-similarity": "^4.0.1"
+  }
+}
