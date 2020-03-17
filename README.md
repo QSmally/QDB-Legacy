@@ -112,4 +112,4 @@ DataStore.LRR;
 ```
 
 ## Bug/Issues/Features
-If you have found a bug, want to suggest a feature or need help with QDB, please contact me at Discord with the tag `QSmally#3594`. On the other hand, if you would like to join the server, the invite link can be found [at our site](https://qdb.qbot.eu/discord).
+If you have found a bug, want to suggest a feature or need help with QDB, please contact me at Discord with the tag `QSmally#3594`. On the other hand, if you would like to join the server, the invite link can be found [at our site](https://qdb.qbot.eu/discord). You can also subject an issue on the [Github repo](https://github.com/QSmally/qdb).
