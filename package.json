@@ -4,7 +4,7 @@
   "description": "JSON wrapper data mangement package for Node.js",
   "main": "QDB.js",
   "scripts": {
-    "test": "npm version && node ."
+    "test": "node version && node ."
   },
   "keywords": [
     "JSON",
@@ -15,6 +15,8 @@
     "QDB",
     "QDatabase"
   ],
+  "homepage": "https://qdb.qbot.eu/",
+  "repository": "github:QSmally/qdb",
   "author": "QSmally",
   "license": "BSD-3-Clause",
   "dependencies": {
