@@ -4,7 +4,8 @@
   "description": "JSON wrapper data mangement package for Node.js",
   "main": "QDB.js",
   "scripts": {
-    "test": "node version && node ."
+    "main": "node version && node .",
+    "test": "node Test/Main.js",
   },
   "keywords": [
     "JSON",
