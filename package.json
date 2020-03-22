@@ -5,7 +5,7 @@
   "main": "QDB.js",
   "scripts": {
     "main": "node version && node .",
-    "test": "node Test/Main.js",
+    "test": "node Test/Main.js"
   },
   "keywords": [
     "JSON",
