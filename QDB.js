@@ -1,12 +1,14 @@
 
-// QDB is built from the ground up by QSmally.
-// Copyright © 2019 QDB by QSmally, all rights reserved.
+/*
+    QDB is built from the ground up by QSmally.
+    QDB © 2020 by QSmally, all rights reserved.
 
-// Obviously Node (and all external libraries)
-// are not made by myself, they're created by their
-// respective owners, all rights are reserved.
+    Obviously Node (and all external libraries)
+    are not made by myself, they're created by their
+    respective owners, all rights are reserved.
 
-// Future included in Qulity (https://qbot.eu/go/qulity).
+    Future included in Qulity (https://qbot.eu/go/qulity).
+*/
 
 
 module.exports = {
@@ -36,6 +38,7 @@ module.exports = {
 
     Collection: require("./lib/Helpers/Collection"),
     Cache:      require("./lib/Helpers/Cache"),
-    DataStore:  require("./lib/Helpers/DataStore")
+    DataStore:  require("./lib/Helpers/DataStore"),
+    Manager:    require("./lib/Helpers/BaseManager")
 
 };
