@@ -1,5 +1,4 @@
 
 const QDB = require("../QDB");
-const DBS = new QDB.Pool("./Test/");
-
-DBS.OnEvent(m => console.log(m));
+// const DB  = new QDB.Connection("./Test/Database.json");
+// const DBS = new QDB.Pool("./Test/");
