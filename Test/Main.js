@@ -3,12 +3,18 @@ process.on("QDB-Debug", Debug => console.log(Debug));
 const QDB = require("../QDB");
 // const DB  = new QDB.Connection("./Test/Database.json");
 
-// const DS = new QDB.DataStore();
-// DS.set("foo", {bar: "roo"});
-// DS.set("bar", {foo: "roo"});
-// DS.set("roo", {foo: "bar"});
+class TestingClass {
+    constructor () {
+        this.foo = "bar";
+    }
+}
 
-// console.log( DS.resolve("bar") );
+const DS = new QDB.DataStore();
+DS.set("foo", new TestingClass());
+DS.set("bar", new TestingClass());
+DS.set("roo", new TestingClass());
+
+console.log( DS.resolve("bar") );
 
 
 // const DBS = new QDB.Pool("./Test/");
