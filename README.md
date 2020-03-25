@@ -119,10 +119,15 @@ const BaseManager = new QDB.Manager();
 
 // Create an instance of this class.
 class UserManager extends BaseManager {
-    constructor (Client, ...Args) { super(...Args); this.Client = Client; }
+    constructor (Client, ...Args) {
+        super(...Args);
+        this.Client = Client;
+    }
 
     // Returns all the administrators in this Manager 
-    get Administrators () { return this.Cache.filter(User => User.Administrator); }
+    get Administrators () {
+        return this.Cache.filter(User => User.Administrator);
+    }
 }
 
 // Create the manager with 'Users' as iterator.
