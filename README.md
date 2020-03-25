@@ -132,12 +132,10 @@ class UserManager extends BaseManager {
 
 // Create the manager with 'Users' as iterator.
 const Users = new UserManager(Client, Users);
+Users.Cache; // All 'Users' as DataStore.
 
 // Automatically get the administrators from this Manager.
 const Admins = Users.Administrators;
-
-// Get all the users in this Manager.
-const MyUsers = Users.Cache;
 ```
 
 ## Bug/Issues/Features
