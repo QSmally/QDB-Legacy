@@ -1,47 +1,26 @@
 
 const QDB = require("../QDB");
 
-// Test: Manager Helper
-// ------------------------------- Initialiser
+// Test: Connection#Find
+// ------------------------------- Find
 
-// const BM = new QDB.Manager();
+const DB = new QDB.Connection("./Test/Database.json");
+DB.Set("foo", "bar");
+DB.Set("bar", "roo");
+DB.Set("roo", "foo");
 
-// console.log(BM);
+console.log( DB.Get() );
+// console.log("---------------------");
 
-// ------------------------------- Main Functions
+const Found = DB.Find((Val, Key, Self) => {
+    console.log([Val, Key, Self]);
 
-// BM.Add("Foo", {Data: "Bar"});
-// BM.Add("Bar", {Data: "Roo"});
-// BM.Add("Roo", {Data: "Foo"});
+    // return Val == "foo";
+    // return Val == "foo" && Key == "roo";
+    return Val == "foo" && Key == "foo";
+});
 
-// console.log(BM);
-// console.log( BM.Resolve("Foo") );
-// console.log( BM.Cache.LRR );
+// console.log("---------------------");
+console.log(Found);
 
-// BM.Remove("Foo");
-
-// console.log( BM );
-// console.log( BM.Resolve("Foo") );
-// console.log( BM.Cache.LRR );
-
-
-// ------------------------------- Iterable
-
-
-// const BM = new QDB.Manager({
-//     "Foo": {Data: "Roo"},
-//     "Bar": {Data: "Foo"},
-//     "Roo": {Data: "Bar"}
-// });
-
-// console.log(BM);
-
-
-// ------------------------------- Holds
-
-
-// class TesterClass { constructor (self) { this.self = self; } }
-// const BM = new QDB.Manager({}, TesterClass);
-
-// console.log(BM.Holds);
-// console.log(BM.Resolve(new TesterClass("Foo")));
+// ------------------------------- Upcoming . . .
