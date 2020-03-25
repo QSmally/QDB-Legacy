@@ -34,7 +34,7 @@ process.on("QDB-Debug", n => console.log(n));
 const QDB = require("qdatabase");
 
 const MyDB = new QDB.Connection("./Databases/Users.json", {
-    Logging: true
+    Polling: true // Multi-process access
 });
 
 // Set an object into the 'Users' database.
@@ -109,6 +109,30 @@ const Model = DataStore.resolve("Users");
 // Or resolve a model and, if the cached module is
 // the one you want to resolve, that gets returned.
 DataStore.LRR;
+```
+
+### Manager
+##### Implements DataStore
+Manages the API methods of DataModels and holds its cache.
+```js
+const BaseManager = new QDB.Manager();
+
+// Create an instance of this class.
+class UserManager extends BaseManager {
+    constructor (Client, ...Args) { super(...Args); this.Client = Client; }
+
+    // Returns all the administrators in this Manager 
+    get Administrators () { return this.Cache.filter(User => User.Administrator); }
+}
+
+// Create the manager with 'Users' as iterator.
+const Users = new UserManager(Client, Users);
+
+// Automatically get the administrators from this Manager.
+const Admins = Users.Administrators;
+
+// Get all the users in this Manager.
+const MyUsers = Users.Cache;
 ```
 
 ## Bug/Issues/Features
