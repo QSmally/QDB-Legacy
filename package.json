@@ -18,9 +18,6 @@
   ],
   "homepage": "https://qdb.qbot.eu/",
   "repository": "github:QSmally/qdb",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "author": "QSmally",
   "license": "BSD-3-Clause",
   "dependencies": {
