@@ -1,26 +1,26 @@
 
 const QDB = require("../QDB");
 
-// Test: Connection#Find
-// ------------------------------- Find
+// Test: Connection#Invert
 
 const DB = new QDB.Connection("./Test/Database.json");
-DB.Set("foo", "bar");
-DB.Set("bar", "roo");
-DB.Set("roo", "foo");
 
-console.log( DB.Get() );
-// console.log("---------------------");
-
-const Found = DB.Find((Val, Key, Self) => {
-    console.log([Val, Key, Self]);
-
-    // return Val == "foo";
-    // return Val == "foo" && Key == "roo";
-    return Val == "foo" && Key == "foo";
+DB.Set({
+    foo: {
+        bar: false,
+        roo: true
+    },
+    roo: true,
+    a: {b: {c: "Hello World!"}}
 });
 
-// console.log("---------------------");
-console.log(Found);
+console.log( DB.Get() );
 
-// ------------------------------- Upcoming . . .
+
+DB.Invert("foo.bar"); // true
+DB.Invert("foo.roo"); // false
+DB.Invert("roo");     // false
+DB.Invert("a.b.c");   // null
+DB.Invert("bar");     // undefined
+
+console.log( DB.Get() );

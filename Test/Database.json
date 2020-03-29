@@ -1,5 +1,12 @@
 {
-    "foo": "bar",
-    "bar": "roo",
-    "roo": "foo"
+    "foo": {
+        "bar": true,
+        "roo": false
+    },
+    "roo": false,
+    "a": {
+        "b": {
+            "c": "Hello World!"
+        }
+    }
 }
