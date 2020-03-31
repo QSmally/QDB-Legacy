@@ -1,37 +1,45 @@
 
 const QDB = require("../QDB");
-const DB = new QDB.Connection("./Test/Database.json");
+// const DB = new QDB.Connection("./Test/Database.json");
 
 
-// Test: Connection#Invert
+// Test: Queue
 
-DB.Set({
-    foo: {
-        bar: false,
-        roo: true
-    },
-    roo: true,
-    a: {b: {c: "Hello World!"}}
+const Q = new QDB.Queue();
+
+console.log( Q.Size );
+console.log( Q.Add("Foo") );
+console.log( Q.Add("Bar") );
+console.log( Q.Add("Foo") );
+console.log( Q.Size );
+
+console.log( Q.Next() );
+console.log( Q.Next() );
+console.log( Q.Next() );
+
+console.log( Q.Next() );
+console.log( Q.Next() );
+console.log( Q.Next() );
+
+console.log("-----------------");
+
+console.log( Q.Size );
+console.log( Q.Add("Foo") );
+console.log( Q.Add("Bar") );
+console.log( Q.Add("Foo") );
+console.log( Q.Size );
+
+console.log("-----------------");
+
+console.log( Q.Add("Roo") );
+console.log( Q.Add("A") );
+console.log( Q.Add("B") );
+console.log( Q.Add("C") );
+console.log( Q.Add("D") );
+console.log( Q.Size );
+
+console.log("-----------------");
+
+Q.Iterate(QueueVal => {
+    console.log(QueueVal);
 });
-
-// console.log( DB.Get() );
-
-
-// DB.Invert("foo.bar"); // true
-// DB.Invert("foo.roo"); // false
-// DB.Invert("roo");     // false
-// DB.Invert("a.b.c");   // null
-// DB.Invert("bar");     // undefined
-
-// console.log( DB.Get() );
-
-
-// Test: Connection#Fetch
-
-console.log( DB.Fetch("roo") );
-console.log( DB.Fetch("foo", "bar") );
-console.log( DB.Fetch("a", "b.c.length") );
-
-console.log( DB.Get("roo") );
-console.log( DB.Get("foo", "bar") );
-console.log( DB.Get("a", "b.c.length") );
