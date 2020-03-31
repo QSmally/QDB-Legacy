@@ -1,9 +1,9 @@
 {
     "foo": {
-        "bar": true,
-        "roo": false
+        "bar": false,
+        "roo": true
     },
-    "roo": false,
+    "roo": true,
     "a": {
         "b": {
             "c": "Hello World!"
