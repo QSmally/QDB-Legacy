@@ -39,6 +39,7 @@ module.exports = {
     Collection: require("./lib/Helpers/Collection"),
     Cache:      require("./lib/Helpers/Cache"),
     DataStore:  require("./lib/Helpers/DataStore"),
-    Manager:    require("./lib/Helpers/BaseManager")
+    Manager:    require("./lib/Helpers/BaseManager"),
+    Queue:      require("./lib/Helpers/Queue")
 
 };
