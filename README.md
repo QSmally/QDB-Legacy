@@ -7,10 +7,11 @@ JSON wrapper data mangement package for Node.js
 
 # Main Features
 * Store in JSON. Withdraw corruptions.
-* Easily managable or use QDB's [utility functions](https://qdb.qbot.eu/documentations/connections/connection).
+* Easily managable or use QDB's [utility functions](https://qdb.qbot.eu/documentations/functions).
 * Create [pools](https://qdb.qbot.eu/documentations/pool) and manage multiple JSON files.
 * Introducing collection classes from [Discord.js](https://discord.js.org/). (Full rights to them.)
 * Extended to [Cache](https://qdb.qbot.eu/documentations/helpers/cache) collections and [DataStore](https://qdb.qbot.eu/documentations/helpers/datastore)s.
+* Added [DataManager](https://qdb.qbot.eu/documentations/helpers/manager)s and [Queue](https://qdb.qbot.eu/documentations/helpers/queue)s.
 
 ## Links
 * [Website](https://qdb.qbot.eu)
@@ -55,6 +56,8 @@ DBS.Select("Users").Get("User");
 // assuming the origin is an array of jobs.
 DBS.Select("Jobs").Append("Full-Stack Developer");
 ```
+
+# Utility Usage
 
 ### Collections
 ##### Modified From Discord.js
@@ -136,6 +139,19 @@ Users.Cache; // All 'Users' as DataStore.
 
 // Automatically get the administrators from this Manager.
 const Admins = Users.Administrators;
+```
+
+### Queue
+A manager for ordening values and iterating over them.
+```js
+const Queue = new QDB.Queue(Shards);
+
+// Iterate over the Queue items.
+Shards = Queue.Iterate(async (Shard, Cache) => {
+    // Logs into the shard and caches it.
+    await Shard.Login(Cache._Token);
+    Cache.set(Shard._Id, Shard);
+}, BaseCache);
 ```
 
 ## Bug/Issues/Features
