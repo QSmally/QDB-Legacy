@@ -14,7 +14,8 @@
     "Data-management",
     "DB",
     "QDB",
-    "QDatabase"
+    "QDatabase",
+    "backend"
   ],
   "homepage": "https://qdb.qbot.eu/",
   "repository": "github:QSmally/qdb",
