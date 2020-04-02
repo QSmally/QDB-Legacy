@@ -118,10 +118,10 @@ DataStore.LRR;
 ##### Implements DataStore
 Manages the API methods of DataModels and holds its cache.
 ```js
-const BaseManager = new QDB.Manager();
+const {Manager} = require("qdatabase");
 
 // Create an instance of this class.
-class UserManager extends BaseManager {
+class UserManager extends Manager {
     constructor (Client, ...Args) {
         super(...Args);
         this.Client = Client;
