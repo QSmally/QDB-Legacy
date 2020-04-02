@@ -3,43 +3,50 @@ const QDB = require("../QDB");
 // const DB = new QDB.Connection("./Test/Database.json");
 
 
-// Test: Queue
+// Test: DS#LRR
 
-const Q = new QDB.Queue();
+// const DS = new QDB.DataStore();
 
-console.log( Q.Size );
-console.log( Q.Add("Foo") );
-console.log( Q.Add("Bar") );
-console.log( Q.Add("Foo") );
-console.log( Q.Size );
+// DS.set("foo", {name: "bar"});
+// DS.set("bar", {name: "roo"});
+// DS.set("roo", {name: "foo"});
 
-console.log( Q.Next() );
-console.log( Q.Next() );
-console.log( Q.Next() );
+// console.log(DS);
 
-console.log( Q.Next() );
-console.log( Q.Next() );
-console.log( Q.Next() );
+// console.log(DS.resolve("bar"));
+// console.log(DS.resolve("foo"));
+// console.log(DS.resolve("foo"));
 
-console.log("-----------------");
 
-console.log( Q.Size );
-console.log( Q.Add("Foo") );
-console.log( Q.Add("Bar") );
-console.log( Q.Add("Foo") );
-console.log( Q.Size );
+// Test: Manager rename
 
-console.log("-----------------");
+const {Manager} = require("../QDB");
+class DataManager extends Manager {
+    constructor(Client, ...Args) {
+        super(...Args);
+        this.Client = Client;
+    }
 
-console.log( Q.Add("Roo") );
-console.log( Q.Add("A") );
-console.log( Q.Add("B") );
-console.log( Q.Add("C") );
-console.log( Q.Add("D") );
-console.log( Q.Size );
+    get Admins () {
+        return this.Cache.filter(m => m.Admin);
+    }
+}
 
-console.log("-----------------");
-
-Q.Iterate(QueueVal => {
-    console.log(QueueVal);
+const MyManager = new DataManager({
+    _Id: "9caw67ahd1a",
+    Foo: false,
+    IsWorking: true
+}, {
+    "foo": {Name: "foo", Admin: false},
+    "bar": {Name: "bar", Admin: true},
+    "roo": {Name: "roo", Admin: false},
+    "goo": {Name: "roo", Admin: false},
+    "doo": {Name: "doo", Admin: true},
 });
+
+MyManager.Add("woo", {
+    Name: "woo", Admin: false
+});
+
+console.log(MyManager);
+console.log(MyManager.Admins);
