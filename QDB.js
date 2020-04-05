@@ -18,28 +18,10 @@ module.exports = {
     Connection:        require("./lib/Connections/Connection"),
     Pool:              require("./lib/Connections/Pool"),
 
-
-    /**
-     * Connects to a database.
-     * @param {Pathlike} Path Path to the JSON database file.
-     * @param {?Object} [valOptions] Optional database settings.
-     * @returns {Connection}
-     */
-    Connect: (Path, valOptions = {}) => new module.exports.Connection(Path, valOptions),
-
-    /**
-     * Connects locally to a database.
-     * @param {Pathlike} Path Path to the JSON database file for a local connection.
-     * @param {Function} Callback Callback with the Connection class.
-     * @returns {Connection} Secondary Connection other than the callback.
-     */
-    Local: (Path, Callback) => Callback(new module.exports.Connection(Path)),
-
-
     Collection: require("./lib/Helpers/Collection"),
     Cache:      require("./lib/Helpers/Cache"),
     DataStore:  require("./lib/Helpers/DataStore"),
-    Manager:    require("./lib/Helpers/Manager"),
-    Queue:      require("./lib/Helpers/Queue")
+    Manager:    require("./lib/Utility/Manager"),
+    Queue:      require("./lib/Utility/Queue")
 
 };
