@@ -6,10 +6,9 @@ JSON wrapper data mangement package for Node.js
 > QDB is a high level data management package which you can import for storing local JavaScript Objects without corruptions. You may connect to multiple JSON files, apart or in a pool, edit data directly or use built-in functions, use polling for multi-process data access and create backups of your databases. Our library can withdraw corruptions and allows for a wide diversity of data transfer.
 
 # Main Features
-* Store in JSON. Withdraw corruptions.
-* Easily managable or use QDB's [utility functions](https://qdb.qbot.eu/documentations/functions).
-* Create [pools](https://qdb.qbot.eu/documentations/pool) and manage multiple JSON files.
-* Introducing collection classes from [Discord.js](https://discord.js.org/). (Full rights to them.)
+* Store in JSON. Easily managable or use QDB's [utility functions](https://qdb.qbot.eu/documentations/functions).
+* Create [pools](https://qdb.qbot.eu/documentations/pool) and manage multiple JSON databases.
+* Introducing Collection classes from [Discord.js](https://discord.js.org/). (Full rights to them.)
 * Extended to [Cache](https://qdb.qbot.eu/documentations/helpers/cache) collections and [DataStore](https://qdb.qbot.eu/documentations/helpers/datastore)s.
 * Added [DataManager](https://qdb.qbot.eu/documentations/helpers/manager)s and [Queue](https://qdb.qbot.eu/documentations/helpers/queue)s.
 
@@ -43,10 +42,10 @@ const MyDB = new QDB.Connection("./Databases/Users.json", {
 MyDB.Set({User: "Smally", Job: "Software Engineer"});
 ```
 
-The following example connects to a folder `./Databases` of database files automatically using a pool.
+The following example connects to a folder `./Databases/` of database files automatically using a pool.
 ```js
 const QDB = require("qdatabase");
-const DBS = new QDB.Pool("./Databases");
+const DBS = new QDB.Pool("./Databases/");
 
 // Get the 'User' from the database table.
 DBS.Select("Users").Get("User");
@@ -99,14 +98,14 @@ Base class that manages the creation, retrieval and deletion of a specific data 
 const DataStore = new QDB.DataStore();
 
 // Set a data model in the DataStore.
-// Note - You can only store objects.
-DataStore.set("Users", {
-    List: ["Smally"],
-    Jobs: []
+// Note - You can only store objects, classes and functions.
+DataStore.set("b0ce7d", {
+    Name: "Smally",
+    Job:  "Software Engineer"
 });
 
 // Resolve a data models to be used.
-const Model = DataStore.resolve("Users");
+const Model = DataStore.resolve("b0ce7d");
 
 // Last Recently Resolved model gets cached.
 // Or resolve a model and, if the cached module is
@@ -135,7 +134,8 @@ class UserManager extends Manager {
 
 // Create the manager with 'Users' as iterator.
 const Users = new UserManager(Client, Users);
-Users.Cache; // All 'Users' as DataStore.
+Users.Client; // Access your own variables in the Manager.
+Users.Cache;  // All 'Users' as DataStore.
 
 // Automatically get the administrators from this Manager.
 const Admins = Users.Administrators;
