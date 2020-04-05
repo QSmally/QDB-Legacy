@@ -1,6 +1,5 @@
 
 const QDB = require("../QDB");
-// const DB = new QDB.Connection("./Test/Database.json");
 
 
 // Test: DS#LRR
@@ -20,33 +19,49 @@ const QDB = require("../QDB");
 
 // Test: Manager rename
 
-const {Manager} = require("../QDB");
-class DataManager extends Manager {
-    constructor(Client, ...Args) {
-        super(...Args);
-        this.Client = Client;
-    }
+// const {Manager} = require("../QDB");
+// class DataManager extends Manager {
+//     constructor(Client, ...Args) {
+//         super(...Args);
+//         this.Client = Client;
+//     }
 
-    get Admins () {
-        return this.Cache.filter(m => m.Admin);
-    }
-}
+//     get Admins () {
+//         return this.Cache.filter(m => m.Admin);
+//     }
+// }
 
-const MyManager = new DataManager({
-    _Id: "9caw67ahd1a",
-    Foo: false,
-    IsWorking: true
-}, {
-    "foo": {Name: "foo", Admin: false},
-    "bar": {Name: "bar", Admin: true},
-    "roo": {Name: "roo", Admin: false},
-    "goo": {Name: "roo", Admin: false},
-    "doo": {Name: "doo", Admin: true},
+// const MyManager = new DataManager({
+//     _Id: "9caw67ahd1a",
+//     Foo: false,
+//     IsWorking: true
+// }, {
+//     "foo": {Name: "foo", Admin: false},
+//     "bar": {Name: "bar", Admin: true},
+//     "roo": {Name: "roo", Admin: false},
+//     "goo": {Name: "roo", Admin: false},
+//     "doo": {Name: "doo", Admin: true},
+// });
+
+// MyManager.Add("woo", {
+//     Name: "woo", Admin: false
+// });
+
+// console.log(MyManager);
+// console.log(MyManager.Admins);
+
+
+// Test: Connection#Exists(Key, Path)
+
+const DB = new QDB.Connection("./Test/Database.json");
+DB.Set({
+    Smally: [],
+    Dragus: [],
+    Cassie: []
 });
 
-MyManager.Add("woo", {
-    Name: "woo", Admin: false
-});
+DB.Push("roo", "Smally");
+DB.Push("foo", "Smally");
+DB.Push("bar", "Smally");
 
-console.log(MyManager);
-console.log(MyManager.Admins);
+console.log(DB.Find("Smally", u => u.includes("haha")));

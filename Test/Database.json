@@ -1,12 +1,9 @@
 {
-    "foo": {
-        "bar": false,
-        "roo": true
-    },
-    "roo": true,
-    "a": {
-        "b": {
-            "c": "Hello World!"
-        }
-    }
+    "Smally": [
+        "roo",
+        "foo",
+        "bar"
+    ],
+    "Dragus": [],
+    "Cassie": []
 }
