@@ -1,8 +1,14 @@
 {
     "Smally": [
-        "roo",
-        "foo",
-        "bar"
+        {
+            "name": "foo"
+        },
+        {
+            "name": "bar"
+        },
+        {
+            "name": "roo"
+        }
     ],
     "Dragus": [],
     "Cassie": []

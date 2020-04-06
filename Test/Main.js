@@ -53,15 +53,15 @@ const QDB = require("../QDB");
 
 // Test: Connection#Exists(Key, Path)
 
-const DB = new QDB.Connection("./Test/Database.json");
-DB.Set({
-    Smally: [],
-    Dragus: [],
-    Cassie: []
-});
+// const DB = new QDB.Connection("./Test/Database.json");
+// DB.Set({
+//     Smally: [],
+//     Dragus: [],
+//     Cassie: []
+// });
 
-DB.Push("roo", "Smally");
-DB.Push("foo", "Smally");
-DB.Push("bar", "Smally");
+// DB.Push({name: "foo"}, "Smally");
+// DB.Push({name: "bar"}, "Smally");
+// DB.Push({name: "roo"}, "Smally");
 
-console.log(DB.Find("Smally", u => u.includes("haha")));
+// console.log(DB.Find("Smally", u => u.name == "roo"));
