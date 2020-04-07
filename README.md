@@ -47,8 +47,8 @@ The following example connects to a folder `./Databases/` of database files auto
 const QDB = require("qdatabase");
 const DBS = new QDB.Pool("./Databases/");
 
-// Get the 'User' from the database table.
-DBS.Select("Users").Get("User");
+// Fetch the 'User' from the database table.
+DBS.Select("Users").Fetch("User");
 // -> "Smally"
 
 // Append "Full-Stack Developer" to the 'Jobs' database,
