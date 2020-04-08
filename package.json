@@ -14,11 +14,10 @@
     "Data-management",
     "DB",
     "QDB",
-    "QDatabase",
     "backend"
   ],
   "homepage": "https://qdb.qbot.eu/",
-  "repository": "github:QSmally/qdb",
+  "repository": "github:QSmally/QDB",
   "author": "QSmally",
   "license": "BSD-3-Clause",
   "dependencies": {
