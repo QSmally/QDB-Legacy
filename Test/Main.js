@@ -218,17 +218,21 @@ console.log("Cache set ID's - ", CC.set(CC.id, 6879528));
 console.log("Cache set ID's - ", CC.set(CC.id, 8923573));
 console.log("Cache current ID - ", CC._Id);
 
-console.log("Accumulator undefined - ", CC.Accumulator);
-console.log("Cache set accumulator - ", CC.set("Accumulator", 1234567890));
-console.log("Accumulator output - ", CC.Accumulator);
-console.log("Cache set accumulator - ", CC.Cached);
+console.log("Cache cached - ", CC.Cached);
 
 console.log("Cache increment - ", CC.increment(0));
 console.log("Cache decrement - ", CC.decrement(1));
 console.log("Cache add - ", CC.add(2, 5));
 console.log("Cache subtract - ", CC.subtract(3, 5));
+console.log("Cache multiply - ", CC.multiply(0, 8));
+console.log("Cache divide - ", CC.subtract(1, 4));
+console.log("Cache square - ", CC.square(2));
+console.log("Cache power - ", CC.square(3));
+console.log("Cache root - ", CC.root(0));
+console.log("Cache exp - ", CC.exp(1));
+console.log("Cache absolute - ", CC.absolute(2));
 
-console.log("Cache accumulate - ", CC.accumulate(CC._Id - 1, (v, k, c) => v + 123));
+console.log("Cache accumulate - ", CC.accumulate(3, (v, k, c) => v + 123));
 
 
 
