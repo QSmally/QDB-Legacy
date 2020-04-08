@@ -1,15 +1,22 @@
-{
-    "Smally": [
-        {
-            "name": "foo"
-        },
-        {
-            "name": "bar"
-        },
-        {
-            "name": "roo"
-        }
-    ],
-    "Dragus": [],
-    "Cassie": []
-}
+[
+    {
+        "name": "foo",
+        "admin": true
+    },
+    {
+        "name": "bar",
+        "admin": false
+    },
+    {
+        "name": "roo",
+        "admin": false
+    },
+    {
+        "name": "doo",
+        "admin": false
+    },
+    {
+        "name": "boo",
+        "admin": true
+    }
+]
