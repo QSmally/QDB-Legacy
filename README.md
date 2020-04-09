@@ -72,22 +72,28 @@ A Collection with extended custom caching features.
 ```js
 const Cache = new QDB.Cache();
 
-// An integer that is free to use within this Cache Collection.
-Cache.Accumulator;
-
 // An ID tracker by the Cache.
 // Automatically increments after use.
-Cache.set(Cache.id, {});
+Cache.set(Cache.id, 872639);
 
 // Utility functions.
 Cache.increment(0);   // Increment key '0'.
 Cache.decrement(1);   // Decrement key '1'.
 Cache.add(2, 5);      // Add 5 to key '2'.
 Cache.subtract(3, 5); // Subtract 5 from key '3'.
+Cache.multiply(4, 3); // Multiply key '4' with 3.
+Cache.divide(5, 3);   // Divide key '5' with 3.
+
+// Additional math operations.
+Cache.square(6);    // Square key '6'.
+Cache.power(7, 4);  // Key '7' to the power of 4.
+Cache.root(8);      // Key '8' to the power of 2.
+Cache.exp(9);       // Euler's number ^ key '8'
+Cache.absolute(10); // Make key '10' absolute.
 
 // Accumulates a function on the cache key.
 Cache.accumulate(4, (Val, Key, Self) => {
-    return Val + 10; // Adds 10 to key '4'.
+    return (Val + 10) * 3; // Adds 10 to key '4', multiplies it by 3.
 });
 ```
 
