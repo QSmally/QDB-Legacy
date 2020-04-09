@@ -242,9 +242,13 @@ console.log("Set DataModel in DataStore - ", DS.set("nv8y37", {name: "Dragus", a
 console.log("Set DataModel in DataStore - ", DS.set("98m34u", {name: "Cassie", address: "NL"}));
 
 console.log("Resolve DataModel - ", DS.resolve("98m34u"));
-console.log("Resolve DataModel - ", DS.resolve("2d8wcn"));
+console.log("Resolve DataModel - ", DS.resolve("nv8y37"));
 console.log("LRR - ", DS.LRR);
 
+console.log("Change DataModel in DataStore - ", DS.set("nv8y37", {name: "Dragus", address: "Asia"}));
+console.log("LRR - ", DS.LRR);
+console.log("Resolve DataModel - ", DS.resolve("nv8y37"));
+console.log("LRR - ", DS.LRR);
 
 
 /* DataManager */
