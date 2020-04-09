@@ -250,6 +250,9 @@ console.log("LRR - ", DS.LRR);
 console.log("Resolve DataModel - ", DS.resolve("nv8y37"));
 console.log("LRR - ", DS.LRR);
 
+console.log("Erase DataModel - ", DS.delete("nv8y37"));
+console.log("LRR - ", DS.LRR);
+
 
 /* DataManager */
 class Shard {constructor () {}}
