@@ -1,14 +1,17 @@
 
 const QDB = require("../QDB");
 
-console.time("foo");
-
-const MyCache = new QDB.Cache({
-    0: 235698,
-    1: 235897,
-    2: 325879,
-    3: 573891
+const MyDataStore = new QDB.DataStore({
+    "foo": {name: "Piggyy"},
+    "bar": {name: "Dragus"},
+    "roo": {name: "Cassie"},
+    "boo": {name: "Smally"}
 });
 
-console.timeEnd("foo");
-console.log(MyCache);
+MyDataStore.set("loo", {name: "Mochi"});
+
+for (let i = 0; i < 1000; i++) {
+    console.time("foo");
+    MyDataStore.resolve("boo");
+    console.timeEnd("foo");
+}
