@@ -1,11 +1,11 @@
 {
   "name": "qdatabase",
-  "version": "3.4.2",
+  "version": "3.5.0",
   "description": "JSON wrapper data mangement package for Node.js",
   "main": "QDB.js",
   "scripts": {
-    "main":      "node -v && npm -v && node .",
-    "test":      "node Test/Main.js",
+    "main": "node -v && npm -v && node .",
+    "test": "node Test/Main.js",
     "benchmark": "node Test/Benchmark.js"
   },
   "keywords": [
