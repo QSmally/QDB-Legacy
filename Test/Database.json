@@ -1,22 +1,8 @@
-[
-    {
-        "name": "foo",
-        "admin": true
+{
+    "foo": {
+        "type": "bar"
     },
-    {
-        "name": "bar",
-        "admin": false
-    },
-    {
-        "name": "roo",
-        "admin": false
-    },
-    {
-        "name": "doo",
-        "admin": false
-    },
-    {
-        "name": "boo",
-        "admin": true
+    "ree": {
+        "type": "roo"
     }
-]
+}

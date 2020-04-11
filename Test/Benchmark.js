@@ -1,17 +1,16 @@
 
 const QDB = require("../QDB");
 
-const MyDataStore = new QDB.DataStore({
-    "foo": {name: "Piggyy"},
-    "bar": {name: "Dragus"},
-    "roo": {name: "Cassie"},
-    "boo": {name: "Smally"}
+const Con = new QDB.Connection("./Test/Database.json");
+
+// console.time("foo");
+
+Con.Set({
+    "foo": {type: "bar"},
+    "ree": {type: "roo"}
 });
 
-MyDataStore.set("loo", {name: "Mochi"});
+const DS = Con.ToDataStore();
+// console.timeEnd("foo");
 
-for (let i = 0; i < 1000; i++) {
-    console.time("foo");
-    MyDataStore.resolve("boo");
-    console.timeEnd("foo");
-}
+console.log(DS);
