@@ -1,16 +1,17 @@
 
 const QDB = require("../QDB");
-
-const Con = new QDB.Connection("./Test/Database.json");
-
-// console.time("foo");
-
-Con.Set({
-    "foo": {type: "bar"},
-    "ree": {type: "roo"}
+const DM  = new QDB.Manager({
+    "Foo": {Name: "Foo", Addr: "Bar"},
+    "Roo": {Name: "Roo", Addr: "Doo"},
 });
 
-const DS = Con.ToDataStore();
-// console.timeEnd("foo");
+console.time("foo");
 
-console.log(DS);
+const Objlike = DM.ToObject();
+
+console.timeEnd("foo");
+
+console.log({
+    DM,
+    Objlike
+});
