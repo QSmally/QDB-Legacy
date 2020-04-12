@@ -291,6 +291,8 @@ console.log("UserManager resolve nothing - ", UM.Resolve());
 console.log("UserManager resolve value - ", UM.Resolve("Cassie"));
 console.log("UserManager resolve instance - ", UM.Resolve(new Shard()));
 
+console.log("UserManager ToObject - ", UM.ToObject());
+
 
 
 /* Queue */
