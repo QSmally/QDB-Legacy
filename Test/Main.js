@@ -56,6 +56,13 @@ console.log("Got property with Dotaccess - ", DB.Fetch("foo", "bar.length"));
 console.log(DB.Fetch());
 
 
+// Connection#ToInstance
+console.log("ToInstance - ", DB.ToInstance(QDB.Collection));
+console.log("ToCache - ", DB.ToCache("too"));
+console.log("ToDataStore - ", DB.ToDataStore());
+console.log("ToIntegratedManager - ", DB.ToIntegratedManager(null, class Foo {}));
+
+
 // Connection#Append
 console.log("Appending object without context key - ", DB.Append({example: "roo"}));
 console.log("Adding object with taken key - ", DB.Append("foo", {roo: "bar"}));
