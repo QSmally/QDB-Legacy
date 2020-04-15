@@ -205,6 +205,27 @@ console.log("Set database to array with objects - ", DB.Set([
 console.log("Search database - ", DB.Search("oo", {Target: "name"}));
 
 
+// Connection#Map
+console.log("Database mapping - ", DB.Map((v, k, d, c) => {
+    v["num"] = Math.random() * 100;
+    v["key"] = k;
+    v["foo"] = {"roo": "ree", "doo": "boo", "goo": "gru"};
+    console.log("Map - ", v);
+    return v;
+}));
+
+console.log("Database dotaccess mapping - ", DB.Map((v, k, d, c) => {
+    console.log("Map - ", v);
+    v = "abc";
+    return v;
+}, "0.foo"));
+
+
+// Connection#Sort
+console.log("Database sorting - ", DB.Sort((a, b) => a.num - b.num));
+console.log("Database dotaccess sorting - ", DB.Sort("0.foo", (a, b) => a - b));
+
+
 // Connection#Find
 console.log("Set database to object - ", DB.Set([
     {name: "foo", admin: true},
