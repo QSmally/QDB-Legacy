@@ -351,6 +351,10 @@ console.log("Iterate cache - ", QM.Iterate((v, c, q) => {
 console.log("Size - ", QM.Size);
 console.log("Values - ", QM.Values);
 
+console.log("Remove - ", QM.Remove(2));
+console.log("Size - ", QM.Size);
+console.log("Values - ", QM.Values);
+
 while (QM.Size != 0) console.log("Next - ", QM.Next());
 
 console.log("Size - ", QM.Size);
