@@ -13,15 +13,20 @@
 
 module.exports = {
 
+    // Database
     BaseConnection:    require("./lib/Connections/BaseConnection"),
     PartialConnection: require("./lib/Connections/PartialConnection"),
     Connection:        require("./lib/Connections/Connection"),
     Pool:              require("./lib/Connections/Pool"),
 
+    // Helpers
     Collection: require("./lib/Helpers/Collection"),
     Cache:      require("./lib/Helpers/Cache"),
     DataStore:  require("./lib/Helpers/DataStore"),
-    Manager:    require("./lib/Utility/Manager"),
-    Queue:      require("./lib/Utility/Queue")
+    Manager:    require("./lib/Helpers/Manager"),
+
+    // Utilities
+    Queue: require("./lib/Utility/Queue"),
+    Stack: require("./lib/Utility/Stack")
 
 };

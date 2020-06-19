@@ -359,3 +359,31 @@ while (QM.Size != 0) console.log("Next - ", QM.Next());
 
 console.log("Size - ", QM.Size);
 console.log("Values - ", QM.Values);
+
+/* Stack */
+const ST = new QDB.Stack();
+console.log("Add value to Stack - ", ST.Push("foo"));
+console.log("Add value to Stack - ", ST.Push("bar"));
+console.log("Add value to Stack - ", ST.Push("roo"));
+console.log("Add value to Stack - ", ST.Push("doo"));
+console.log("Add value to Stack - ", ST.Push("goo"));
+
+console.log("Stack Size - ", ST.Size);
+
+console.log("Seek recent - ", ST.Seek());
+console.log("Seek 1 last - ", ST.Seek(1));
+console.log("Seek 2 last - ", ST.Seek(2));
+console.log("Seek 100 last - ", ST.Seek(100));
+
+console.log("Pop last from Stack - ", ST.Pop());
+console.log("Stack Size - ", ST.Size);
+console.log("Seek recent - ", ST.Seek());
+
+console.log("Pop last 2 from Stack - ", ST.Pop(2));
+console.log("Stack Size - ", ST.Size);
+console.log("Seek recent - ", ST.Seek());
+
+console.log("Flush Stack - ", ST.Flush());
+console.log("Stack Size - ", ST.Size);
+console.log("Seek recent - ", ST.Seek());
+console.log("Stack values - ", ST.Values);
