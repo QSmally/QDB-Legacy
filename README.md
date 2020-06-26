@@ -10,7 +10,7 @@ JSON wrapper data mangement package for Node.js
 * Create [pools](https://qdb.qbot.eu/documentations/pool) and manage multiple JSON databases.
 * Introducing Collection classes from [Discord.js](https://discord.js.org/). (Full rights to them.)
 * Extended to [Cache](https://qdb.qbot.eu/documentations/helpers/cache) collections and [DataStore](https://qdb.qbot.eu/documentations/helpers/datastore)s.
-* Added [DataManager](https://qdb.qbot.eu/documentations/helpers/manager)s and [Queue](https://qdb.qbot.eu/documentations/helpers/queue)s.
+* Added [DataManager](https://qdb.qbot.eu/documentations/helpers/manager)s, [Queue](https://qdb.qbot.eu/documentations/helpers/queue)s and [Stacks](https://qdb.qbot.eu/documentations/helpers/stack).
 
 ## Links
 * [Website](https://qdb.qbot.eu)
