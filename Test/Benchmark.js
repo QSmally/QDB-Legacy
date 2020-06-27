@@ -1,17 +1,11 @@
 
 const QDB = require("../QDB");
-const DM  = new QDB.Manager({
-    "Foo": {Name: "Foo", Addr: "Bar"},
-    "Roo": {Name: "Roo", Addr: "Doo"},
-});
+
+const CM = new QDB.Cache();
 
 console.time("foo");
 
-const Objlike = DM.ToObject();
+CM.set("foo", 0);
+console.log(CM.increment("foo"));
 
 console.timeEnd("foo");
-
-console.log({
-    DM,
-    Objlike
-});
