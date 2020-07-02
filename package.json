@@ -20,7 +20,7 @@
   "homepage": "https://qdb.qbot.eu/",
   "repository": "github:QSmally/QDB",
   "author": "QSmally",
-  "license": "BSD-3-Clause",
+  "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.2",
     "string-similarity": "^4.0.1"
