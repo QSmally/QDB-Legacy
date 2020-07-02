@@ -5,6 +5,8 @@ JSON wrapper data mangement package for Node.js
 
 > QDB is a high level data management package which you can import for storing local JavaScript Objects without corruptions. You may connect to multiple JSON files, apart or in a pool, edit data directly or use built-in functions, use polling for multi-process data access and create backups of your databases. Our library can withdraw corruptions and allows for a wide diversity of data transfer.
 
+QDB is getting ready for a migration to two packets! This module will be split up into just the database and utilities, so if you just want to use the data management utilities, you can install just that module.
+
 # Main Features
 * Store in JSON. Easily managable or use QDB's [utility functions](https://qdb.qbot.eu/documentations/functions).
 * Create [pools](https://qdb.qbot.eu/documentations/pool) and manage multiple JSON databases.
@@ -34,7 +36,7 @@ process.on("QDB-Debug", n => console.log(n));
 const QDB = require("qdatabase");
 
 const MyDB = new QDB.Connection("./Databases/Users.json", {
-    Polling: true // Multi-process access
+    Polling: true // Multi-process access.
 });
 
 // Set an object into the 'Users' database.
@@ -132,7 +134,7 @@ class UserManager extends Manager {
         this.Client = Client;
     }
 
-    // Returns all the administrators in this Manager 
+    // Returns all the administrators in this Manager.
     get Administrators () {
         return this.Cache.filter(User => User.Administrator);
     }
@@ -166,7 +168,7 @@ A manager for temporarily storing mass data in sequence.
 // Push a datastream onto a Stack for later access.
 const Stack = new QDB.Stack(DataStream);
 
-// Seek in the Stack
+// Seek in the Stack.
 Stack.Seek(3);
 ```
 
