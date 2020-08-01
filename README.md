@@ -3,7 +3,7 @@
 
 JSON Data Mangement
 
-**From this release onwards, we will backport features from [v4](https://github.com/QSmally/QDB/tree/v4) and start to migrate to SQL (and JSON support).**
+**From this release onwards, we will backport features from [v4](https://github.com/QSmally/QDB/tree/v4) and start to migrate to SQL (with JSON support).**
 
 > QDB is a high level data management for storing local JavaScript Objects without corruptions. Connect to multiple JSON files, use connection pooling, edit data directly or use QDB's built-in functions.
 
@@ -59,6 +59,8 @@ DBS.Select("Jobs").Append("Full-Stack Developer");
 ```
 
 # Utility Usage
+
+Check out the [base utility repository here](https://github.com/QSmally/Qulity/blob/master/Documentation/Index.md).
 
 ### Cache
 ##### Extends [Collection](https://github.com/QSmally/Qulity/blob/master/Documentation/Collection.md)
