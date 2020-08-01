@@ -1,11 +1,11 @@
 
 # QDB3
 
-JSON wrapper data mangement package for Node.js
+JSON Data Mangement
 
-> QDB is a high level data management package which you can import for storing local JavaScript Objects without corruptions. You may connect to multiple JSON files, apart or in a pool, edit data directly or use built-in functions, use polling for multi-process data access and create backups of your databases. Our library can withdraw corruptions and allows for a wide diversity of data transfer.
+**From this release onwards, we will backport features from v4 and start to migrate to SQL (and JSON support).**
 
-QDB is getting ready for a migration to two packets! This module will be split up into just the database and utilities, so if you just want to use the data management utilities, you can install just that module.
+> QDB is a high level data management for storing local JavaScript Objects without corruptions. Connect to multiple JSON files, use connection pooling, edit data directly or use QDB's built-in functions.
 
 # Main Features
 * Store in JSON. Easily managable or use QDB's [utility functions](https://qdb.qbot.eu/documentations/functions).
@@ -173,7 +173,7 @@ Stack.Seek(3);
 ```
 
 ## Bug/Issues/Features
-If you have found a bug, want to suggest a feature or need help with QDB, please contact me at Discord with the tag `QSmally#3594`. On the other hand, if you would like to join the server, the invite link can be found [at our site](https://qdb.qbot.eu/discord). You can also subject an issue on the [Github repo](https://github.com/QSmally/QDB).
+If you have found a bug, want to suggest a feature or need help with QDB, please contact me at Discord with the tag `QSmally#3594`. On the other hand, if you would like to join the server, the invite link can be found [at our site](https://qdb.qbot.eu/discord). You can also subject an issue on the [Github repo](https://github.com/QSmally/QDB-Legacy).
 
 ## Contributing
-This module is licensed under MIT. Feel free to contribute by forking the repository, or cloning [the master branch](https://github.com/QSmally/QDB#master) for in-progress features.
+This module is licensed under MIT. Feel free to contribute by forking the repository, or cloning [the master branch](https://github.com/QSmally/QDB-Legacy#master) for in-progress features.
