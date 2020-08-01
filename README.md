@@ -3,7 +3,7 @@
 
 JSON Data Mangement
 
-**From this release onwards, we will backport features from v4 and start to migrate to SQL (and JSON support).**
+**From this release onwards, we will backport features from [v4](https://github.com/QSmally/QDB/tree/v4) and start to migrate to SQL (and JSON support).**
 
 > QDB is a high level data management for storing local JavaScript Objects without corruptions. Connect to multiple JSON files, use connection pooling, edit data directly or use QDB's built-in functions.
 
@@ -11,8 +11,8 @@ JSON Data Mangement
 * Store in JSON. Easily managable or use QDB's [utility functions](https://qdb.qbot.eu/documentations/functions).
 * Create [pools](https://qdb.qbot.eu/documentations/pool) and manage multiple JSON databases.
 * Introducing Collection classes from [Discord.js](https://discord.js.org/). (Full rights to them.)
-* Extended to [Cache](https://qdb.qbot.eu/documentations/helpers/cache) collections and [DataStore](https://qdb.qbot.eu/documentations/helpers/datastore)s.
-* Added [DataManager](https://qdb.qbot.eu/documentations/helpers/manager)s, [Queue](https://qdb.qbot.eu/documentations/helpers/queue)s and [Stacks](https://qdb.qbot.eu/documentations/helpers/stack).
+* Extended to [Cache](https://qdb.qbot.eu/documentations/helpers/cache) collections and [DataStore](https://github.com/QSmally/Qulity/blob/master/Documentation/DataStore.md)s.
+* Added [DataManager](https://github.com/QSmally/Qulity/blob/master/Documentation/Manager.md)s, [Queue](https://qdb.qbot.eu/documentations/helpers/queue)s and [Stacks](https://qdb.qbot.eu/documentations/helpers/stack).
 
 ## Links
 * [Website](https://qdb.qbot.eu)
@@ -60,16 +60,8 @@ DBS.Select("Jobs").Append("Full-Stack Developer");
 
 # Utility Usage
 
-### Collections
-##### Modified From Discord.js
-An extended JavaScript Map with additional utility methods. Optimised rather than arrays.
-```js
-const QDB = require("qdatabase");
-const Collection = new QDB.Collection();
-```
-
 ### Cache
-##### Extends Collection
+##### Extends [Collection](https://github.com/QSmally/Qulity/blob/master/Documentation/Collection.md)
 A Collection with extended custom caching features.
 ```js
 const Cache = new QDB.Cache();
@@ -97,69 +89,6 @@ Cache.absolute(10); // Make key '10' absolute.
 Cache.accumulate(4, (Val, Key, Self) => {
     return (Val + 10) * 3; // Adds 10 to key '4', multiplies it by 3.
 });
-```
-
-### DataStore
-##### Extends Collection
-Base class that manages the creation, retrieval and deletion of a specific data model with additional methods that could be added.
-```js
-const DataStore = new QDB.DataStore();
-
-// Set a data model in the DataStore.
-// Note - You can only store objects, classes and functions.
-DataStore.set("b0ce7d", {
-    Name: "Smally",
-    Job:  "Software Engineer"
-});
-
-// Resolve a data models to be used.
-const Model = DataStore.resolve("b0ce7d");
-
-// Last Recently Resolved model gets cached.
-// Or resolve a model and, if the cached module is
-// the one you want to resolve, that gets returned.
-DataStore.LRR;
-```
-
-### Manager
-##### Implements DataStore
-Manages the API methods of DataModels and holds its cache.
-```js
-const {Manager} = require("qdatabase");
-
-// Create an instance of this class.
-class UserManager extends Manager {
-    constructor (Client, ...Args) {
-        super(...Args);
-        this.Client = Client;
-    }
-
-    // Returns all the administrators in this Manager.
-    get Administrators () {
-        return this.Cache.filter(User => User.Administrator);
-    }
-}
-
-// Create the manager with 'Users' as iterator.
-const Users = new UserManager(Client, Users);
-Users.Client; // Access your own variables in the Manager.
-Users.Cache;  // All 'Users' as DataStore.
-
-// Automatically get the administrators from this Manager.
-const Admins = Users.Administrators;
-```
-
-### Queue
-A manager for ordening values and iterating over them.
-```js
-const Queue = new QDB.Queue(Shards);
-
-// Iterate over the Queue items.
-Shards = Queue.Iterate(async (Shard, Cache) => {
-    // Logs into the shard and caches it.
-    await Shard.Login(Cache._Token);
-    Cache.set(Shard._Id, Shard);
-}, BaseCache);
 ```
 
 ### Stack
