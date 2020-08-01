@@ -11,6 +11,8 @@
 */
 
 
+const Qulity = require("qulity");
+
 module.exports = {
 
     // Database
@@ -19,14 +21,11 @@ module.exports = {
     Connection:        require("./lib/Connections/Connection"),
     Pool:              require("./lib/Connections/Pool"),
 
-    // Helpers
-    Collection: require("./lib/Helpers/Collection"),
-    Cache:      require("./lib/Helpers/Cache"),
-    DataStore:  require("./lib/Helpers/DataStore"),
-    Manager:    require("./lib/Helpers/Manager"),
+    // Supported utilities
+    ...Qulity,
 
-    // Utilities
-    Queue: require("./lib/Utility/Queue"),
+    // Extended utilities
+    Cache: require("./lib/Utility/Cache"),
     Stack: require("./lib/Utility/Stack")
 
 };
